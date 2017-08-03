@@ -10,6 +10,7 @@
       <input type="password" class="form-control mb-2 border-top-0 border-left-0 border-right-0" placeholder="Password" [(ngModel)]="user.password"/>
       <input type="password" class="form-control mb-2 border-top-0 border-left-0 border-right-0" placeholder="Confirm Password" [(ngModel)]="user.confirmedPassword"/>
       <button class="btn btn-success btn-block" (click)="signup()">Registrieren</button>
+      <button class="btn btn-info btn-block" (click)="back()">Schon ein Account? Login</button>
       <button class="btn btn-danger btn-block" (click)="testFailedSignup()">Test Failed signup</button>
     </div>
   </div>

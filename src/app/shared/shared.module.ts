@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from "@angular/forms";
 import { ToastrModule } from "ngx-toastr";
@@ -14,7 +14,7 @@ export const providers = [
     CommonModule,
     FormsModule,
     ToastrModule.forRoot({positionClass: 'toast-bottom-right', progressBar:true}),
-    NgbModule,
+    NgbModule.forRoot(),
     RouterModule
   ],
   exports: [
@@ -26,11 +26,4 @@ export const providers = [
   ],
   declarations: []
 })
-export class SharedModule {
-  static withProviders() : ModuleWithProviders {
-    return {
-      ngModule: SharedModule,
-      providers: [...providers]
-    };
-  }
-}
+export class SharedModule { }

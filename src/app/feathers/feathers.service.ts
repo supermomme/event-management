@@ -18,7 +18,7 @@ export class FeathersService {
   constructor(
     private toastrService: ToastrService
   ) {
-    console.log("TEST")
+    console.log("Initialize Feathers")
     this.socket = io(this.socketUrl);
 
     this.app = feathers();
@@ -32,6 +32,10 @@ export class FeathersService {
     this.socket.io.on('connect_error', err => {
       this.toastrService.error('Verbindung zum Server verloren\nWiederaufbau...', 'Verbindungsfehler');
     });
+    this.socket.io.on('reconnect', (attemptNumber) => {
+      this.toastrService.success('Verbindung zum Server wurde wieder hergestellt', 'Verbindung hergestellt');
+    });
+
 
   }
 

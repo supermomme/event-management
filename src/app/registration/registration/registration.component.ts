@@ -37,4 +37,8 @@ export class RegistrationComponent implements OnInit {
     }
   }
 
+  back() {
+    this.router.navigate(['login'])
+  }
+
 }
