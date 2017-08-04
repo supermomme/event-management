@@ -4,11 +4,13 @@
   <thead class="thead-default">
     <tr>
       <th>Name</th>
+      <th>Permissions</th>
     </tr>
   </thead>
   <tbody *ngFor="let role of roles">
     <tr (click)="goToRole(role._id)">
       <td>{{role.name}}</td>
+      <td>{{role.permissions?.length || '0'}}</td>
     </tr>
   </tbody>
 </table>

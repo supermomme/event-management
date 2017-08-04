@@ -8,6 +8,9 @@ import { AdministrationUserEditComponent } from './administration-user-edit/admi
 import { AdministrationRoleListComponent } from './administration-role-list/administration-role-list.component';
 import { AdministrationRoleEditComponent } from './administration-role-edit/administration-role-edit.component';
 import { AdministrationPurposeListComponent } from './administration-purpose-list/administration-purpose-list.component';
+import { AdministrationRegistrationListComponent } from './administration-registration-list/administration-registration-list.component';
+import { AdministrationEventListComponent } from './administration-event-list/administration-event-list.component';
+import { AdministrationEventEditComponent } from './administration-event-edit/administration-event-edit.component';
 
 const routes: Routes = [
   {
@@ -19,6 +22,9 @@ const routes: Routes = [
       { path: 'role', component: AdministrationRoleListComponent },
       { path: 'role/:id', component: AdministrationRoleEditComponent },
       { path: 'purpose', component: AdministrationPurposeListComponent },
+      { path: 'registration', component: AdministrationRegistrationListComponent },
+      { path: 'event', component: AdministrationEventListComponent },
+      { path: 'event/:id', component: AdministrationEventEditComponent },
     ]
   }
 ];
@@ -34,7 +40,10 @@ const routes: Routes = [
     AdministrationUserEditComponent,
     AdministrationRoleListComponent,
     AdministrationRoleEditComponent,
-    AdministrationPurposeListComponent
+    AdministrationPurposeListComponent,
+    AdministrationRegistrationListComponent,
+    AdministrationEventListComponent,
+    AdministrationEventEditComponent
   ]
 })
 export class AdministrationModule { }

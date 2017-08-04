@@ -2,11 +2,15 @@
   <thead class="thead-default">
     <tr>
       <th>Name</th>
+      <th>Event</th>
+      <th>Permissions</th>
     </tr>
   </thead>
   <tbody *ngFor="let purpose of purposes">
     <tr (click)="goToPurpose(purpose._id)">
       <td>{{purpose.name}}</td>
+      <td>{{purpose.event.title}}</td>
+      <td>{{purpose.permissions?.length || '0'}}</td>
     </tr>
   </tbody>
 </table>

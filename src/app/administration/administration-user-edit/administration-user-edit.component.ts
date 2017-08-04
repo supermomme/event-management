@@ -12,6 +12,7 @@ export class AdministrationUserEditComponent implements OnInit, OnDestroy {
   private sub: any;
   private user: any = {};
   private roles: any[] = [];
+  private picture: any = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -23,6 +24,7 @@ export class AdministrationUserEditComponent implements OnInit, OnDestroy {
     this.sub = this.route.params.subscribe(params => this.id = params['id']);
     this.feathers.service('users').get(this.id)
     .then(user=>this.user = user)
+    .then(user=>this.picture = user.picture.uri || '')
     .catch(err=>err.code === 404 ? this.router.navigate(['admin', 'user']) : err)
     .catch(err=>console.error(err))
 
@@ -44,6 +46,10 @@ export class AdministrationUserEditComponent implements OnInit, OnDestroy {
     this.feathers.service('users').patch(this.id, this.user)
     .then(res=>console.log(res))
     .catch(error=>console.error(error))
+  }
+
+  changePicture() {
+    console.log("TODO: add changePicture()")
   }
 
 }
