@@ -1,0 +1,7 @@
+
+<select class="form-control custom-select" (change)="registration.event = $event.target.value">
+  <option value="">Please select an event</option>
+  <option *ngFor="let event of events" [value]="event._id" [selected]="registration.event === event._id">{{event.title}}</option>
+</select>
+<button class="btn btn-success" (click)="submit()">Continue</button>
+<button class="btn btn-danger" (click)="back()">Back</button>

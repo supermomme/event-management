@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AdministrationEventListComponent implements OnInit {
   private events:any[] = [ ];
+  private busy:Promise<any>;
 
   constructor(
     private feathers: FeathersService,
@@ -16,7 +17,7 @@ export class AdministrationEventListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.feathers.service('event').find()
+    this.busy = this.feathers.service('event').find()
     .then(res=>res.data)
     .then(events=>this.events = events)
   }

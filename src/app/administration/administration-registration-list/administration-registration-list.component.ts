@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AdministrationRegistrationListComponent implements OnInit {
   private registrations:any[] = [ ];
+  private busy:Promise<any>;
 
   constructor(
     private feathers: FeathersService,
@@ -16,7 +17,7 @@ export class AdministrationRegistrationListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.feathers.service('registration').find()
+    this.busy = this.feathers.service('registration').find()
     .then(res=>res.data)
     .then(registrations=>this.registrations = registrations)
   }

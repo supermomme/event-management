@@ -20,9 +20,9 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    /*this.authGuard.authenticate()
+    this.authGuard.authenticate()
     .then(user=>this.router.navigate(['admin']))
-    .catch(err=>{})*/
+    .catch(err=>{})
   }
 
   login() {

@@ -17,7 +17,8 @@ const appRoutes: Routes = [
     component: LayoutComponent,
     children: [
       { path: '', redirectTo: '/admin', pathMatch: 'full' },
-      { path: 'admin', loadChildren: 'app/administration/administration.module#AdministrationModule'}
+      { path: 'admin', loadChildren: 'app/administration/administration.module#AdministrationModule'},
+      { path: 'assistant', loadChildren: 'app/assistant/assistant.module#AssistantModule' }
     ],
     canActivate: [AuthGuardService]
   },
