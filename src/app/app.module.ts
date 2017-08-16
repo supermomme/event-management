@@ -18,7 +18,7 @@ const appRoutes: Routes = [
     children: [
       { path: '', redirectTo: '/admin', pathMatch: 'full' },
       { path: 'admin', loadChildren: 'app/administration/administration.module#AdministrationModule'},
-      { path: 'assistant', loadChildren: 'app/assistant/assistant.module#AssistantModule' }
+      { path: 'assistant', loadChildren: 'app/assistants/assistants.module#AssistantsModule' }
     ],
     canActivate: [AuthGuardService]
   },

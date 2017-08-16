@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FeathersService } from '../../feathers/feathers.service';
+import { FeathersService } from '../../../feathers/feathers.service';
 
 @Component({
   selector: 'app-event-registration',
@@ -11,8 +11,10 @@ export class EventRegistrationComponent implements OnInit, OnDestroy {
   public step = 0;
   private lastStep = 1;
   private registration:any = {};
+  private registrationResponse:any = {};
   private sub: any;
   private params: any;
+  private success: Boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -50,8 +52,22 @@ export class EventRegistrationComponent implements OnInit, OnDestroy {
     if ((this.step === 0 && steps > 0) || (this.step === this.lastStep) && steps < 0) {
       this.step += steps;
     } else if (this.step >= this.lastStep && steps > 0) {
-      console.log("Finished")
+      this.finish();
     }
+  }
+
+  finish() {
+    this.feathers.service('registration')
+    .create(this.registration)
+    .then((res)=>{
+      console.log(res);
+      this.registrationResponse = res;
+      this.success = true;
+    })
+    .catch((err)=>{
+      console.log(err)
+      this.success = false;
+    })
   }
 
 }

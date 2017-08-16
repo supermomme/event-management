@@ -6,10 +6,6 @@ import { NgbModule, NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from "@angular/router";
 import { BusyModule } from 'angular2-busy';
 
-export const providers = [
-  NgbTooltipConfig
-];
-
 @NgModule({
   imports: [
     CommonModule,

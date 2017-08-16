@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FeathersService } from '../../feathers/feathers.service';
+import { FeathersService } from '../../../feathers/feathers.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({

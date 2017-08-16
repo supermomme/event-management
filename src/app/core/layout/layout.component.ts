@@ -9,7 +9,11 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent implements OnInit {
-
+  checked = false;
+  indeterminate = false;
+  align = 'start';
+  disabled = false;
+  
   constructor(
     private authGuard: AuthGuardService,
     private router: Router,
