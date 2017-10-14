@@ -10,7 +10,7 @@ import { AuthGuardService } from '../../feathers/auth-guard.service';
 })
 export class LoginComponent implements OnInit {
 
-  private email: String = "";
+  private username: String = "";
   private password: String = "";
 
   constructor(
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.authGuard.authenticate({
       strategy:'local',
-      email:this.email,
+      username:this.username,
       password:this.password
     })
     .then(user=>{
