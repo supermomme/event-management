@@ -1,7 +1,0 @@
-
-<select class="form-control custom-select" (change)="registration.purpose = $event.target.value">
-  <option value="">Please select a purpose</option>
-  <option *ngFor="let purpose of purposes" [value]="purpose._id" [selected]="registration.purpose === purpose._id">{{purpose.name}}</option>
-</select>
-<button class="btn btn-success" (click)="submit()">Continue</button>
-<button class="btn btn-danger" (click)="back()">Back</button>
