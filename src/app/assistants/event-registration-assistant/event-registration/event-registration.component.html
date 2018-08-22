@@ -1,9 +1,0 @@
-<ng-container *ngIf="success">
-  <app-event-registration-success [registration]="registrationResponse"></app-event-registration-success>
-</ng-container>
-
-<ng-container *ngIf="!success" [ngSwitch]="step">
-  <app-event-registration-step-1 *ngSwitchCase="0" [(registration)]="registration" (stepChange)="setStep($event)"></app-event-registration-step-1>
-  <app-event-registration-step-2 *ngSwitchCase="1" [(registration)]="registration" (stepChange)="setStep($event)"></app-event-registration-step-2>
-</ng-container>
-<pre>{{registration | json}}</pre>
